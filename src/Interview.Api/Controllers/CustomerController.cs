@@ -11,18 +11,10 @@ namespace Interview.Api.Controllers;
 public class CustomerController : Controller
 {
     private readonly ICustomerService _customerService;
-    private readonly IProductService _productService;
-    private ICustomerService @object;
 
-    public CustomerController(ICustomerService @object)
-    {
-        this.@object = @object;
-    }
-
-    public CustomerController(ICustomerService customerService, IProductService productService)
+    public CustomerController(ICustomerService customerService)
     {
         _customerService = customerService;
-        _productService = productService;
     }
 
     [HttpPost]
