@@ -14,4 +14,5 @@ public class InterviewContext : DbContext
     }
 
     public virtual DbSet<CustomerEntity> Customers { get; set; }
+    public virtual DbSet<ProductEntity> Products { get; set; }
 }

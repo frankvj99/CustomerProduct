@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Interview.Data.Models;
 using Interview.Data.Services.Interfaces;
@@ -10,10 +11,18 @@ namespace Interview.Api.Controllers;
 public class CustomerController : Controller
 {
     private readonly ICustomerService _customerService;
+    private readonly IProductService _productService;
+    private ICustomerService @object;
 
-    public CustomerController(ICustomerService customerService)
+    public CustomerController(ICustomerService @object)
+    {
+        this.@object = @object;
+    }
+
+    public CustomerController(ICustomerService customerService, IProductService productService)
     {
         _customerService = customerService;
+        _productService = productService;
     }
 
     [HttpPost]
